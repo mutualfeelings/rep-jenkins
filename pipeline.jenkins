@@ -8,6 +8,15 @@ pipeline{
                 sh "docker version"
             }
         }
+        stage("Checkout") { 
+            steps{
+                git branch: "main",
+                    url: 'https://github.com/mutualfeelings/rep-jenkins.git'
+
+                sh 'pwd'
+
+            }
+        }
     }
     
 }
