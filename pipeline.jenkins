@@ -23,6 +23,11 @@ pipeline{
 
             }
         }
+        stage("Build docker image"){ 
+            steps{
+                sh 'docker build -t mutuallfeelings/image-jenkins:0.3 .'
+            }
+        }
     }
     
 }
