@@ -25,14 +25,14 @@ pipeline{
         }
         stage("Build docker image"){ 
             steps{
-                sh 'docker build -t mutuallfeelings/image-jenkins:0.3 .'
+                sh 'docker build -t mutuallfeelings/image-jenkins:0.4 .'
             }
         }
         stage("Push docker image to hub"){
             steps{
                 withDockerRegistry(credentialsId: 'dockerhub-mutuallfeelings', url: "https://index.docker.io/v1/") {
                 sh '''
-                    docker push mutuallfeelings/image-jenkins:0.3
+                    docker push mutuallfeelings/image-jenkins:0.4
                 '''
                 }
             }
